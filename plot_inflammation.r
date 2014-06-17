@@ -8,7 +8,8 @@
 # Load libraries
 require(ggplot2)
 require(reshape2)
- # Here's a comment
+# Here's a comment
+
 # Takes one command line argument as input data set
 options <- commandArgs(trailingOnly = TRUE)
  

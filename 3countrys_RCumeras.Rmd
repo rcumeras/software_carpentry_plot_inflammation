@@ -16,9 +16,19 @@ ggplot(dat,aes(x=year,y=gdpPercap,color=country)) + geom_point(size=3)+ facet_wr
 Japan and Spain have similar gdp. Kenya is really low.
 
 ### 2. Calculate mean, min and max of Expectance Life
+
+Mean:
 ```{r echo=FALSE}
 aggregate(lifeExp~country, dat, FUN=mean)
+```
+
+Min:
+```{r echo=FALSE}
 aggregate(lifeExp~country, dat, FUN=min)
+```
+
+Max:
+```{r echo=FALSE}
 aggregate(lifeExp~country, dat, FUN=max)
 ```
 

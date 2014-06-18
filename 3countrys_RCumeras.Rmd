@@ -15,6 +15,7 @@ ggplot(dat,aes(x=year,y=gdpPercap,color=country)) + geom_point(size=3)+ facet_wr
 
 Japan and Spain have similar gdp. Kenya is really low.
 
+
 ### 2. Calculate mean, min and max of Expectance Life
 
 Mean:
@@ -33,3 +34,20 @@ aggregate(lifeExp~country, dat, FUN=max)
 ```
 
 Kenya's expectation life is lower than Japan and Spain that both are similar
+
+
+### 3. Histograms
+
+Histogram of Life Expectancy for all countrys
+
+```{r echo=FALSE}
+ggplot(gDat,aes(x=lifeExp)) + geom_histogram(binwidth=5)
+```
+
+Histogram of Life Expectancy for all countrys with a much narrower bandwith
+
+```{r echo=FALSE}
+ggplot(gDat,aes(x=lifeExp)) + geom_histogram(binwidth=1)
+```
+
+With narrower bandwith some hidden pattern can appear

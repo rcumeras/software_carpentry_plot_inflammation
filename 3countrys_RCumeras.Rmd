@@ -1,17 +1,25 @@
-Title
-========================================================
+## R software practice
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+### 1. Choose 3 countrys and plot gdp vs Year
+1. Spain
+2. Kenya
+3. Japan
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-a 
-```{r}
+```{r echo=FALSE}
 library('reshape2')
 library('ggplot2')
 gDat<-read.delim("gapminderDataFiveYear.txt")
 dat<-subset(gDat,c(country=="Spain"|country=="Kenya"|country=="Japan"))
-View(dat)
 ggplot(dat,aes(x=year,y=gdpPercap,color=country)) + geom_point(size=3)+ facet_wrap(~ country)
 ```
 
+Japan and Spain have similar gdp. Kenya is really low.
 
+### 2. Calculate mean, min and max of Expectance Life
+```{r echo=FALSE}
+aggregate(lifeExp~country, dat, FUN=mean)
+aggregate(lifeExp~country, dat, FUN=min)
+aggregate(lifeExp~country, dat, FUN=max)
+```
+
+Kenya's expectation life is lower than Japan and Spain that both are similar
